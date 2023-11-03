@@ -67,13 +67,60 @@ Prepare a source bundle of the application code, which is a ZIP file containing 
 
 In order to execute the terraform script- after ensuring all prerequisites have been met:
 
-1. Make sure you have downloaded the source code to your local and <span style="color:red;">make sure you have followed the prerequisites</span>
-2. Check to make sure that the `.zip` file exists in the repo, if it does not, then run:
-    ```
-    zip -r my-flask-app.zip my-flask-app-directory/
-    
-    ```
-3. 
+1. Set up AWS Credentials:
+You'll need to have AWS credentials configured for Terraform to interact with your AWS account. You can set this up using AWS IAM with the necessary permissions and configure your environment with the AWS CLI, or use environment variables like AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.
+
+2. Prepare Your Terraform Files:
+Organize your Terraform files as described previously, with the root folder containing the main configuration files (main.tf, variables.tf, outputs.tf) and a modules/ directory containing the module configurations.
+
+3. Initialize Terraform:
+Open a terminal and navigate to your Terraform directory where the main.tf is located.
+Run
+```
+terraform init
+```
+This command initializes the Terraform environment, downloads the necessary providers, and prepares the modules.
+
+4. Create Terraform Variables File or Use CLI Arguments (Optional):
+If you have any variables in your variables.tf that don't have default values, you need to provide these values. You can do this by creating a terraform.tfvars file or by passing them through the CLI using the -var argument.
+
+5. Plan Your Deployment:
+
+Run
+```
+terraform plan
+```
+This command creates an execution plan and shows you what actions Terraform will perform when you apply your configuration. If you have variable values to pass in, you would also include those here.
+
+6. Review the plan to make sure everything looks correct.
+
+7. Apply Your Configuration:
+Run 
+```
+terraform apply 
+```
+This command will prompt you to review the plan one more time before applying it. To skip the prompt, you can use 
+```
+terraform apply -auto-approve
+```
+Terraform will then provision the AWS resources as defined in your configuration.
+
+8. Verify Deployment:
+After Terraform completes the apply step, check the AWS Console to confirm that the resources have been created successfully.
+
+9. Access the Deployed Resources:
+
+Use the output from Terraform to access your deployed resources. For example, you've set up an Elastic Beanstalk environment, so you'll get an endpoint to access your application.
+
+10. Maintain Your Terraform State:
+Terraform maintains a state file (terraform.tfstate) that tracks the resources it manages. Keep this file secure and consider using remote state management features like Terraform Cloud or an S3 backend for team environments.
+
+11. Clean Up:
+When you no longer need the resources, you run 
+```
+terraform destroy
+```
+To clean up all resources managed by Terraform. Be cautious with this command, as it will terminate and remove all resources defined in your Terraform configuration.
 
 
 
