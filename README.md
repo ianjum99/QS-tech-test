@@ -75,10 +75,7 @@ Organize your Terraform files as described previously, with the root folder cont
 
 3. Initialize Terraform:
 Open a terminal and navigate to where the main.tf file is located.
-Run
-```
-terraform init
-```
+Run `terraform init`
 This command initializes the Terraform environment, downloads the necessary providers, and prepares the modules.
 
 4. Create Terraform Variables File or Use CLI Arguments (Optional):
@@ -86,23 +83,14 @@ If you have any variables in your variables.tf that don't have default values, y
 
 5. Plan Your Deployment:
 
-Run
-```
-terraform plan
-```
+Run `terraform plan`
 This command creates an execution plan and shows you what actions Terraform will perform when you apply your configuration.
 
 6. Review the plan to make sure everything looks correct.
 
 7. Apply Your Configuration:
-Run 
-```
-terraform apply 
-```
-This command will prompt you to review the plan one more time before applying it. To skip the prompt, you can use 
-```
-terraform apply -auto-approve
-```
+Run `terraform apply`
+This command will prompt you to review the plan one more time before applying it. To skip the prompt, you can use `terraform apply -auto-approve`
 Terraform will then provision the AWS resources as defined in the configuration.
 
 8. Verify Deployment:
@@ -115,7 +103,10 @@ Use the output from Terraform to access your deployed resources. For example, yo
 10. Maintain Your Terraform State:
 Terraform maintains a state file (terraform.tfstate) that tracks the resources it manages. Keep this file secure and consider using remote state management features like Terraform Cloud or an S3 backend for team environments.
 
-11. Clean Up:
+11. Access the application:
+Run `terraform output`, and look for `application_url`, this should be the URL- this is the CNAME provided by elastic beanstalk and should be accessible using any web browser.
+
+13. Clean Up:
 When you no longer need the resources, you run 
 ```
 terraform destroy
