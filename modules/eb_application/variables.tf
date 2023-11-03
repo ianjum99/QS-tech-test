@@ -28,8 +28,17 @@ variable "max_size" {
   type        = number
 }
 
-variable "vpc_id" {
-  description = "The VPC ID for the security group"
+variable "sg_id" {
+  description = "The ID of the security group"
   type        = string
 }
 
+variable "app_source_bucket" {
+  description = "The name of the S3 bucket containing the application source bundle"
+  type        = string
+}
+
+variable "app_source_key" {
+  description = "The key of the S3 object containing the application source bundle"
+  type        = string
+}
