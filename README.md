@@ -74,7 +74,7 @@ You'll need to have AWS credentials configured for Terraform to interact with yo
 Organize your Terraform files as described previously, with the root folder containing the main configuration files (main.tf, variables.tf, outputs.tf) and a modules/ directory containing the module configurations.
 
 3. Initialize Terraform:
-Open a terminal and navigate to your Terraform directory where the main.tf is located.
+Open a terminal and navigate to where the main.tf file is located.
 Run
 ```
 terraform init
@@ -90,7 +90,7 @@ Run
 ```
 terraform plan
 ```
-This command creates an execution plan and shows you what actions Terraform will perform when you apply your configuration. If you have variable values to pass in, you would also include those here.
+This command creates an execution plan and shows you what actions Terraform will perform when you apply your configuration.
 
 6. Review the plan to make sure everything looks correct.
 
@@ -103,7 +103,7 @@ This command will prompt you to review the plan one more time before applying it
 ```
 terraform apply -auto-approve
 ```
-Terraform will then provision the AWS resources as defined in your configuration.
+Terraform will then provision the AWS resources as defined in the configuration.
 
 8. Verify Deployment:
 After Terraform completes the apply step, check the AWS Console to confirm that the resources have been created successfully.
