@@ -2,6 +2,10 @@
 
 ## Prerequisites
 
+### AWS/Terraform on local
+
+Make sure that you have both an up to date version of the AWS CLI and Terraform CLI downloaded on your local machine
+
 In the Terraform configuration files provided above, you will need to replace placeholder values with actual values that correspond to your specific AWS environment and setup. Here are the values that you would need to replace:
 
 ### VPC ID:
@@ -59,6 +63,17 @@ If you need SSH access to the instances created by Elastic Beanstalk, you'll nee
 ### Application Source Bundle:
 Prepare a source bundle of the application code, which is a ZIP file containing all the files needed to run your application. The Terraform script expects this to be available to upload to the S3 bucket or to already be in S3 (A sample one is provided in the GitHub Repo)
 
+# Executing the Terraform Script
+
+In order to execute the terraform script- after ensuring all prerequisites have been met:
+
+1. Make sure you have downloaded the source code to your local and <span style="color:red;">make sure you have followed the prerequisites</span>
+2. Check to make sure that the `.zip` file exists in the repo, if it does not, then run:
+    ```
+    zip -r my-flask-app.zip my-flask-app-directory/
+    
+    ```
+3. 
 
 
 
