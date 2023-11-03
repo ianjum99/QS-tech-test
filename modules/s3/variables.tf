@@ -11,5 +11,5 @@ variable "app_source_key" {
 variable "source_directory" {
   description = "The local directory where the application zip file is located."
   type        = string
-  default     = "../.."  # Adjust the path according to your project structure
+  default     = "../.." 
 }
