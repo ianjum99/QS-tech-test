@@ -1,6 +1,9 @@
-provider "aws" {
-  region = "us-east-1"
+variable "region" {
+  description = "The AWS region to deploy resources into"
+  type        = string
+  default     = "us-east-1"
 }
+
 
 module "s3_bucket" {
   source      = "./modules/s3"
