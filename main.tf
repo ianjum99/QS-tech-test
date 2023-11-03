@@ -16,14 +16,14 @@ module "eb_application" {
   min_size            = 2
   max_size            = 4
   vpc_id              = module.security_group.vpc_id
-  sg_id               = module.security_group.sg_id # Assuming your security_group module provides the ID of the created SG as an output.
-  app_source_bucket   = module.s3_bucket.bucket_id # Assuming your s3 module provides the bucket ID as an output.
-  app_source_key      = "flask_app.zip"            # The key where your zipped application is stored.
+  sg_id               = module.security_group.security_group_id
+  app_source_bucket   = module.s3_bucket.bucket_id
+  app_source_key      = "flask_app.zip"          
 }
 
 module "security_group" {
   source  = "./modules/security_group"
-  vpc_id  = "vpc-12345678" # Replace with your actual VPC ID
+  vpc_id  = "vpc-12345678" # Replace with actual VPC ID
 }
 
 output "application_url" {
