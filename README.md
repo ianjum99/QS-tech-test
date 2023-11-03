@@ -57,7 +57,7 @@ The script assumes the existence of a VPC. Make sure you have a VPC ID to input 
 If you need SSH access to the instances created by Elastic Beanstalk, you'll need an SSH key pair created in the AWS region where you’re deploying the infrastructure.
 
 ### Application Source Bundle:
-Prepare a source bundle of your application code, which is a ZIP file containing all the files needed to run your application. The Terraform script expects this to be available to upload to the S3 bucket or to already be in S3 (A sample one is provided in the GitHub Repo)
+Prepare a source bundle of the application code, which is a ZIP file containing all the files needed to run your application. The Terraform script expects this to be available to upload to the S3 bucket or to already be in S3 (A sample one is provided in the GitHub Repo)
 
 
 
