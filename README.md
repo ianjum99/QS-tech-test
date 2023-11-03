@@ -68,7 +68,7 @@ Prepare a source bundle of the application code, which is a ZIP file containing 
 In order to execute the terraform script- after ensuring all prerequisites have been met:
 
 1. Set up AWS Credentials:
-You'll need to have AWS credentials configured for Terraform to interact with your AWS account. You can set this up using AWS IAM with the necessary permissions and configure your environment with the AWS CLI, or use environment variables like AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.
+You'll need to have AWS credentials configured for Terraform to interact with your AWS account. You can set this up using AWS IAM with the necessary permissions and configure your environment with the AWS CLI, or use environment variables like `AWS_ACCESS_KEY_ID`and `AWS_SECRET_ACCESS_KEY`.
 
 2. Prepare Your Terraform Files:
 Organize your Terraform files as described previously, with the root folder containing the main configuration files (main.tf, variables.tf, outputs.tf) and a modules/ directory containing the module configurations.
