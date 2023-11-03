@@ -2,6 +2,10 @@
 
 ## Prerequisites
 
+### OpenWeather Map API Key
+
+head to https://openweathermap.org/api, create an account, and input you API key inside of app.py where it says "YOUR_API_KEY_HERE"
+
 ### AWS/Terraform on local
 
 Make sure that you have both an up to date version of the AWS CLI and Terraform CLI downloaded on your local machine
