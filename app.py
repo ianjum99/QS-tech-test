@@ -8,7 +8,7 @@ def index():
     weather_data = None
     if request.method == 'POST':
         city = request.form['city']
-        response = requests.get(f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid=26fe2d83fc761197527c10e6604ba31f')
+        response = requests.get(f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid=YOUR_API_KEY_HERE')
         if response.status_code == 200:
             weather_data = response.json()
     return render_template('index.html', weather_data=weather_data)
